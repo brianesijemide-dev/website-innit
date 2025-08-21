@@ -1,111 +1,381 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian</title>
-</head>
-<a></a>
-<body>
-  <h1>DOWNLOAD SOME RANDOM SHII HERE</h1>
-  <a><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Song Landing Page</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  .container {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  }
-  h1 {
-    margin-bottom: 10px;
-  }
-  .images {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 25px 0;
-    flex-wrap: wrap;
-  }
-  .images img {
-    border-radius: 12px;
-    max-width: 250px;
-    height: auto;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-  }
-  .images img:hover {
-    transform: scale(1.05);
-  }
-  .info {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  .download-link {
-    display: inline-block;
-    background: #ff416c;
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(255,65,108,0.5);
-    transition: background 0.3s ease;
-  }
-  .download-link:hover {
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-  }
-  @media(max-width: 600px) {
-    .images {
-      flex-direction: column;
-      gap: 20px;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Some Random Shii — Brian (Official Album Page)</title>
+  <meta name="description" content="Official album page for Brian — Some Random Shii. Stream songs, get tickets, and become a sponsor." />
+  <style>
+    :root{
+      --bg: #0b0f1a;
+      --card: rgba(255,255,255,.06);
+      --muted: rgba(255,255,255,.65);
+      --text: #ffffff;
+      --accent: #6a11cb;
+      --accent-2: #2575fc;
+      --glow: 0 15px 40px rgba(101, 88, 245, .35);
+      --radius: 16px;
     }
-    .images img {
-      max-width: 80%;
-      margin: 0 auto;
+
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 800px at 10% 10%, #111a33 0, transparent 55%),
+                radial-gradient(1000px 700px at 90% 20%, #1a1030 0, transparent 60%),
+                linear-gradient(135deg, var(--bg) 0%, #070a12 100%);color:var(--text);font:16px/1.55 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial}
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Header */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(90deg, rgba(106,17,203,.25), rgba(37,117,252,.25));
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-  }
-</style>
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 4px rgba(106,17,203,.25)}
+    .menu{display:flex;gap:16px;align-items:center}
+    .menu a{opacity:.9;padding:8px 10px;border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.08)}
+    .search{position:relative}
+    .search input{
+      width:220px;max-width:42vw;padding:10px 36px 10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+      outline:none;background:rgba(255,255,255,.06);color:var(--text)
+    }
+    .search button{position:absolute;right:4px;top:4px;height:32px;border:0;border-radius:8px;padding:0 10px;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
+
+    /* Hero */
+    .hero{max-width:1100px;margin:28px auto;padding:28px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .tag{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:.85rem}
+    .tag .pulse{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 6px rgba(106,17,203,.25);}
+    .hero h1{font-size:clamp(28px, 4vw, 48px);line-height:1.1;margin:14px 0}
+    .sub{color:var(--muted)}
+    .cta{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
+    .btn{border:0;padding:12px 16px;border-radius:12px;cursor:pointer;font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--glow);color:#fff}
+    .btn.ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff}
+
+    .cover-card{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg, rgba(106,17,203,.5), rgba(37,117,252,.5));border:1px solid rgba(255,255,255,.15);box-shadow:var(--glow)}
+    .cover-card .frame{padding:20px}
+
+    /* AI Slides */
+    .slides{max-width:1100px;margin:6px auto 8px;padding:0 20px}
+    .slides-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .slides-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .slide{
+      background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;min-height:120px;position:relative;overflow:hidden
+    }
+    .slide h4{margin:0 0 6px;font-size:1rem}
+    .slide p{margin:0;color:var(--muted);font-size:.95rem}
+
+    /* Album & songs */
+    .section{max-width:1100px;margin:32px auto;padding:0 20px}
+    .section h2{margin:0 0 8px}
+    .section p.lead{margin-top:0;color:var(--muted)}
+
+    .songs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .song{display:grid;grid-template-columns:86px 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:10px}
+    .song img{width:86px;height:86px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.12)}
+    .song h4{margin:0}
+    .meta{color:var(--muted);font-size:.9rem}
+    .song .actions{display:flex;gap:10px}
+    .pill{padding:8px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);font-size:.9rem}
+
+    /* Forms */
+    form{display:grid;gap:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{font-weight:600}
+    input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff}
+    textarea{min-height:100px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px}
+
+    .footer{max-width:1100px;margin:40px auto 80px;color:var(--muted);padding:0 20px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .slides-grid{grid-template-columns:repeat(2,1fr)}
+      .songs{grid-template-columns:1fr}
+      .search input{width:150px}
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Brian - Let Go</h1>
-    <div class="images">
-      <img src="goon.png" alt="goon.png" />
-      <img src="CUM.png" alt="Album Cover" />
+  <!-- Header -->
+  <header class="nav" id="home">
+    <div class="nav-inner">
+      <div class="brand"><span class="dot"></span> Brian — <span style="opacity:.85">Some Random Shii</span></div>
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#album">Album</a>
+        <a href="#sponsor">Sponsor</a>
+        <a href="#tickets">Tickets</a>
+      </nav>
+      <div class="search" role="search">
+        <input id="searchInput" type="search" placeholder="Search songs…" aria-label="Search songs" />
+        <button id="searchBtn" aria-label="Run search">Go</button>
+      </div>
     </div>
-    <p class="info">
-      "LET GO" is an amazing track from the album "Some Randon Shii" by Brian.
-      It blends catchy melodies with heartfelt lyrics, making it a must-listen for music lovers.
-      Released in 2025, this song has already captured the hearts of many fans worldwide.
-    </p>
-    <a href="let-go.mp3.mp3">
-      Download the Song
-    </a>
-  </div>
-</body>
-</html>
- </a>  
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <span class="tag"><span class="pulse"></span> New era album</span>
+      <h1>“Press Play on Your Feelings.”</h1>
+      <p class="sub">Dive into <strong>Some Random Shii</strong>, a collection of moods by <strong>Brian</strong>. Stream, sponsor the movement, or grab your tickets for the next show.</p>
+      <div class="cta">
+        <a class="btn primary" href="#album">Listen now</a>
+        <a class="btn ghost" href="#tickets">Get tickets</a>
+      </div>
+    </div>
+    <div class="cover-card">
+      <div class="frame">
+        <img src="CUM.png" alt="Album cover — Some Random Shii" onerror="this.src='cover1.jpg'"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Slides -->
+  <section class="slides" aria-labelledby="slidesTitle">
+    <div class="slides-head">
+      <h3 id="slidesTitle">AI‑Generated Promo Slides</h3>
+      <div style="display:flex;gap:8px">
+        <button class="btn ghost" id="shuffleSlides">Shuffle</button>
+        <button class="btn primary" id="autoPlayBtn">Auto Play</button>
+      </div>
+    </div>
+    <div class="slides-grid" id="slidesGrid" aria-live="polite"></div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About the Album</h2>
+    <p class="lead">Written and produced by Brian, <em>Some Random Shii</em> blends airy hooks, gritty drums, and late‑night stories. Made to be felt at 2am.</p>
+  </section>
+
+  <!-- Album / Songs -->
+  <section class="section" id="album">
+    <h2>Album: Some Random Shii</h2>
+    <p class="lead">Search, stream, and download. All tracks from the same project.</p>
+    <div class="songs" id="songs"></div>
+  </section>
+
+  <!-- Sponsor -->
+  <section class="section" id="sponsor">
+    <div class="card">
+      <h2>Sponsorship Form</h2>
+      <p class="lead">Support the music and get your brand in front of fans.</p>
+      <form id="sponsorForm">
+        <div class="grid-2">
+          <div>
+            <label for="sName">Full Name</label>
+            <input id="sName" name="name" required />
+          </div>
+          <div>
+            <label for="sEmail">Email</label>
+            <input id="sEmail" name="email" type="email" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="sOrg">Organization</label>
+            <input id="sOrg" name="org" />
+          </div>
+          <div>
+            <label for="sTier">Sponsorship Tier</label>
+            <select id="sTier" name="tier" required>
+              <option value="">Choose…</option>
+              <option>Bronze – $250</option>
+              <option>Silver – $500</option>
+              <option>Gold – $1,000</option>
+              <option>Platinum – $2,500</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="sMsg">Message</label>
+          <textarea id="sMsg" name="message" placeholder="Tell us how you’d like to collaborate"></textarea>
+        </div>
+        <button class="btn primary" type="submit">Submit interest</button>
+        <div id="sponsorStatus" class="meta" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Tickets -->
+  <section class="section" id="tickets">
+    <div class="card">
+      <h2>Ticket Registration & Purchase</h2>
+      <p class="lead">Lock in your spot for the next Brian live session.</p>
+      <form id="ticketForm">
+        <div class="grid-2">
+          <div>
+            <label for="tName">Full Name</label>
+            <input id="tName" name="name" required />
+          </div>
+          <div>
+            <label for="tEmail">Email</label>
+            <input id="tEmail" name="email" type="email" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="tType">Ticket Type</label>
+            <select id="tType" name="type" required>
+              <option value="">Select…</option>
+              <option value="regular">Regular – $20</option>
+              <option value="vip">VIP – $50</option>
+              <option value="vvip">VVIP – $120</option>
+            </select>
+          </div>
+          <div>
+            <label for="tQty">Quantity</label>
+            <input id="tQty" name="qty" type="number" min="1" value="1" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="tCard">Card Number (demo)</label>
+            <input id="tCard" name="card" inputmode="numeric" placeholder="1111 2222 3333 4444" />
+          </div>
+          <div>
+            <label for="tExp">Expiry & CVC (demo)</label>
+            <input id="tExp" name="exp" placeholder="MM/YY • CVC" />
+          </div>
+        </div>
+        <button class="btn primary" type="submit">Purchase</button>
+        <div id="ticketStatus" class="meta" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Brian — Some Random Shii • “Press Play on Your Feelings.”</div>
+  </footer>
+
+  <script>
+    // ---- SONG DATA (same album) ----
+    const albumTitle = "Some Random Shii";
+    const songsData = [
+      { id: 1, title: "Let Go", artist: "Brian", duration: "3:12", cover: "goon.png", src: "let-go.mp3" },
+      { id: 2, title: "Night Drive", artist: "Brian", duration: "2:58", cover: "cover2.jpg", src: "night-drive.mp3" },
+      { id: 3, title: "Echoes", artist: "Brian", duration: "3:33", cover: "cover3.jpg", src: "echoes.mp3" },
+      { id: 4, title: "Blue Smoke", artist: "Brian", duration: "2:47", cover: "cover4.jpg", src: "blue-smoke.mp3" },
+      { id: 5, title: "Afterparty", artist: "Brian", duration: "3:20", cover: "cover5.jpg", src: "afterparty.mp3" }
+    ];
+
+    // ---- RENDER SONGS ----
+    const songsWrap = document.getElementById('songs');
+    function renderSongs(list){
+      songsWrap.innerHTML = '';
+      list.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'song';
+        card.innerHTML = `
+          <img src="${s.cover}" alt="${s.title} cover" onerror="this.src='CUM.png'"/>
+          <div>
+            <h4>${s.title}</h4>
+            <div class="meta">${s.artist} • ${albumTitle} • ${s.duration}</div>
+            <audio controls preload="none" src="${s.src}" style="width:100%;margin-top:6px"></audio>
+          </div>
+          <div class="actions">
+            <a class="pill" download href="${s.src}">Download</a>
+            <a class="pill" href="#tickets">Buy Ticket</a>
+          </div>`;
+        songsWrap.appendChild(card);
+      })
+    }
+    renderSongs(songsData);
+
+    // ---- SEARCH ----
+    const searchInput = document.getElementById('searchInput');
+    document.getElementById('searchBtn').addEventListener('click', doSearch);
+    searchInput.addEventListener('input', doSearch);
+
+    function doSearch(){
+      const q = searchInput.value.toLowerCase().trim();
+      const filtered = songsData.filter(s => s.title.toLowerCase().includes(q) || s.artist.toLowerCase().includes(q));
+      renderSongs(filtered);
+    }
+
+    // ---- AI SLIDES (client-side generation) ----
+    const slideHooks = [
+      "Feel it in HD.",
+      "Bass that breathes.",
+      "For 2am thinkers.",
+      "Melodies with mileage.",
+      "From room to rooftop.",
+      "Vibes you can keep.",
+      "Press play on your feelings.",
+      "Built for night mode.",
+      "Heartbeats per minute: rising.",
+      "When lyrics hit different."
+    ];
+    const slideTags = ["#LetGo", "#NightDrive", "#Echoes", "#BlueSmoke", "#Afterparty"];
+
+    function makeSlide(){
+      const hook = slideHooks[Math.floor(Math.random()*slideHooks.length)];
+      const tag = slideTags[Math.floor(Math.random()*slideTags.length)];
+      const color1 = `hsl(${Math.floor(Math.random()*360)},70%,55%)`;
+      const color2 = `hsl(${Math.floor(Math.random()*360)},70%,45%)`;
+      const el = document.createElement('div');
+      el.className='slide';
+      el.style.background = `linear-gradient(135deg, ${color1}33, ${color2}33)`;
+      el.style.borderColor = `${color2}66`;
+      el.innerHTML = `<h4>${hook}</h4><p>${tag} • ${albumTitle}</p>`;
+      return el;
+    }
+
+    function renderSlides(count=4){
+      const grid = document.getElementById('slidesGrid');
+      grid.innerHTML = '';
+      for(let i=0;i<count;i++) grid.appendChild(makeSlide());
+    }
+    renderSlides();
+
+    let autoPlay = false, autoTimer;
+    document.getElementById('shuffleSlides').onclick = () => renderSlides();
+    document.getElementById('autoPlayBtn').onclick = (e)=>{
+      autoPlay = !autoPlay;
+      e.target.textContent = autoPlay ? 'Stop' : 'Auto Play';
+      if(autoPlay){
+        autoTimer = setInterval(renderSlides, 1800);
+      }else{
+        clearInterval(autoTimer);
+      }
+    }
+
+    // ---- Forms (demo handlers) ----
+    function sleep(ms){ return new Promise(res=>setTimeout(res,ms)) }
+
+    document.getElementById('sponsorForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const status = document.getElementById('sponsorStatus');
+      status.textContent = 'Submitting…';
+      await sleep(800);
+      const form = new FormData(e.target);
+      status.textContent = `Thanks, ${form.get('name')}! We\'ll contact you at ${form.get('email')} about ${form.get('tier')}.`;
+      e.target.reset();
+    })
+
+    document.getElementById('ticketForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const status = document.getElementById('ticketStatus');
+      status.textContent = 'Processing…';
+      await sleep(900);
+      const form = new FormData(e.target);
+      const qty = Number(form.get('qty')||1);
+      const type = form.get('type');
+      const prices = {regular:20, vip:50, vvip:120};
+      const total = prices[type]*qty || 0;
+      status.textContent = `Booked ${qty} × ${type?.toUpperCase()} for $${total}. E‑tickets sent to ${form.get('email')}.`;
+      e.target.reset();
+    })
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
-</html>
