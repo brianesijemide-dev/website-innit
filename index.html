@@ -376,6 +376,13 @@
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  </script><link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://godfather14.app.n8n.cloud/webhook/a347dfa5-d3a0-4c47-a012-c9207ddcdde6/chat'
+	});
+</script>
 </body>
 
